@@ -19,7 +19,9 @@ import {
   Gamepad2,
   Users,
   ShoppingBag,
-  Download
+  Download,
+  BrainCircuit,
+  BookOpen
 } from 'lucide-react';
 
 const App = () => {
@@ -93,8 +95,17 @@ const App = () => {
         school: "Eötvös Loránd University",
         location: "Budapest, Hungary",
         degree: "Bachelor's Degree in Computer Science",
-        status: "Expected Graduation: June 2027"
+        status: "Expected Graduation: June 2027",
+        courses: ["Data Structures & Algorithms", "Imperative Programming", "Linear Algebra", "Database Management", "Operating Systems"]
       }
+    ],
+    softSkills: [
+      "Leadership & Team Management",
+      "Strategic Planning",
+      "Crisis Management",
+      "Intercultural Communication",
+      "Process Optimization (Lean)",
+      "Problem Solving"
     ],
     languages: [
       { language: "Turkish", level: "Native", percent: 100 },
@@ -312,7 +323,7 @@ const App = () => {
           {/* Right Column (Sidebar) */}
           <div className="space-y-8">
             
-            {/* Education Card */}
+            {/* Education Card (Updated with Courses) */}
             <section className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-indigo-100 text-indigo-600 rounded-lg">
@@ -326,9 +337,40 @@ const App = () => {
                   <h4 className="font-bold text-slate-900">{edu.school}</h4>
                   <p className="text-slate-500 text-sm mb-2">{edu.location}</p>
                   <p className="text-blue-600 font-medium">{edu.degree}</p>
-                  <p className="text-slate-400 text-sm mt-2">{edu.status}</p>
+                  <p className="text-slate-400 text-sm mt-2 mb-3">{edu.status}</p>
+                  
+                  {/* Relevant Coursework */}
+                  <div className="pt-3 border-t border-slate-100">
+                    <div className="flex items-center gap-2 mb-2 text-slate-700 font-semibold text-sm">
+                      <BookOpen size={14} /> <span>Key Courses</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {edu.courses.map((course, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md">
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
+            </section>
+
+            {/* Management/Soft Skills (New) */}
+            <section className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-rose-100 text-rose-600 rounded-lg">
+                  <BrainCircuit size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800">Management Skills</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {data.softSkills.map((skill, idx) => (
+                  <span key={idx} className="px-3 py-1.5 bg-rose-50 text-rose-700 border border-rose-100 rounded-lg text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </section>
 
             {/* Languages Card */}
