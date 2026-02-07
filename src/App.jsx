@@ -72,19 +72,19 @@ const App = () => {
         title: "Language Vocabulary App",
         description: "A native Android mobile application designed to help users learn and memorize foreign language vocabulary efficiently. Built while learning Android Studio fundamentals.",
         tags: ["Android Studio", "Mobile Dev", "Java/Kotlin"],
-        link: "https://github.com/bilgekaplan394-dotcom" // App henüz mağazada değilse GitHub linki kalabilir
+        link: "https://github.com/bilgekaplan394-dotcom" 
       },
       {
         title: "Vercel Micro-Tools Collection",
         description: "A suite of small, focused web utilities and tools developed to solve specific problems. Deployed and hosted on Vercel for high performance and accessibility.",
         tags: ["React", "Next.js", "Vercel", "Tools"],
-        link: "https://github.com/bilgekaplan394-dotcom" // Buraya araçların olduğu repo linki gelebilir
+        link: "https://github.com/bilgekaplan394-dotcom" 
       },
       {
         title: "Memorial Website",
         description: "A dedicated digital memorial space designed with sensitivity and elegance. Features biography sections, photo galleries, and tribute messages.",
         tags: ["Web Design", "UI/UX", "Frontend"],
-        link: "http://tributeternal.rf.gd" // EKLENDİ
+        link: "http://tributeternal.rf.gd"
       }
     ],
     education: [
@@ -147,9 +147,10 @@ const App = () => {
 
             <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
               {/* Download CV Button */}
+              {/* ÖNEMLİ: PDF dosyasını 'public' klasörüne 'Bilgehan_Kaplan_Resume.pdf' adıyla koyduğundan emin ol */}
               <a 
                 href="/Bilgehan_Kaplan_Resume.pdf" 
-                download
+                download="Bilgehan_Kaplan_Resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all hover:-translate-y-1 shadow-lg shadow-blue-500/30 group"
               >
                 <Download size={20} className="group-hover:animate-bounce" />
