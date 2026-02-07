@@ -125,87 +125,83 @@ const App = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">{data.personal.name}</h1>
-            <h2 className="text-xl md:text-2xl text-blue-300 font-medium mb-6">{data.personal.title}</h2>
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
             
-            <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mb-8 mx-auto md:mx-0">
-              {data.personal.about}
-            </p>
-
-            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start text-sm text-slate-300 mb-8">
-              <a href={`mailto:${data.personal.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail size={18} /> {data.personal.email}
-              </a>
-              <a href={`tel:${data.personal.phone}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone size={18} /> {data.personal.phone}
-              </a>
-              <span className="flex items-center gap-2">
-                <MapPin size={18} /> {data.personal.location}
-              </span>
+            {/* Profile Image Section */}
+            <div className="shrink-0 relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <img 
+                src="/profile.jpg" 
+                alt="Bilgehan Kaplan" 
+                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-slate-800 shadow-2xl object-cover bg-slate-800"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://ui-avatars.com/api/?name=Bilgehan+Kaplan&background=0D8ABC&color=fff&size=256"; // Fallback image if profile.jpg is missing
+                }}
+              />
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
-              {/* Download CV Button */}
-              {/* ÖNEMLİ: PDF dosyasını 'public' klasörüne 'Bilgehan_Kaplan_Resume.pdf' adıyla koyduğundan emin ol */}
-              <a 
-                href="/Bilgehan_Kaplan_Resume.pdf" 
-                download="Bilgehan_Kaplan_Resume.pdf"
-                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all hover:-translate-y-1 shadow-lg shadow-blue-500/30 group"
-              >
-                <Download size={20} className="group-hover:animate-bounce" />
-                Download Resume
-              </a>
+            {/* Text Content */}
+            <div className="text-center md:text-left flex-1">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">{data.personal.name}</h1>
+              <h2 className="text-xl md:text-2xl text-blue-300 font-medium mb-6">{data.personal.title}</h2>
+              
+              <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                {data.personal.about}
+              </p>
 
-              <div className="flex gap-4">
-                {/* LinkedIn Link */}
-                <a 
-                  href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
-                >
-                  <Linkedin size={24} />
+              <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start text-sm text-slate-300 mb-8">
+                <a href={`mailto:${data.personal.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Mail size={18} /> {data.personal.email}
                 </a>
-                {/* GitHub Link */}
-                <a 
-                  href="https://github.com/bilgekaplan394-dotcom" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
-                >
-                  <Github size={24} />
+                <a href={`tel:${data.personal.phone}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Phone size={18} /> {data.personal.phone}
                 </a>
+                <span className="flex items-center gap-2">
+                  <MapPin size={18} /> {data.personal.location}
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
+                {/* Download CV Button */}
+                <a 
+                  href="/Bilgehan_Kaplan_Resume.pdf" 
+                  download="Bilgehan_Kaplan_Resume.pdf"
+                  className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all hover:-translate-y-1 shadow-lg shadow-blue-500/30 group"
+                >
+                  <Download size={20} className="group-hover:animate-bounce" />
+                  Download Resume
+                </a>
+
+                <div className="flex gap-4">
+                  {/* LinkedIn Link */}
+                  <a 
+                    href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+                  {/* GitHub Link */}
+                  <a 
+                    href="https://github.com/bilgekaplan394-dotcom" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
+                  >
+                    <Github size={24} />
+                  </a>
+                </div>
               </div>
             </div>
-
-            {/* Mobile Social Links */}
-             <div className="mt-8 flex gap-4 justify-center md:justify-start md:hidden">
-              <a 
-                href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
-                target="_blank"
-                rel="noopener noreferrer" 
-                className="p-2 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a 
-                href="https://github.com/bilgekaplan394-dotcom" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1"
-              >
-                <Github size={24} />
-              </a>
-            </div>
-
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-6 -mt-16 pb-20 relative z-20">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Left Column (Main Info) */}
           <div className="md:col-span-2 space-y-8">
