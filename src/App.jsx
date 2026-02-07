@@ -72,19 +72,19 @@ const App = () => {
         title: "Language Vocabulary App",
         description: "A native Android mobile application designed to help users learn and memorize foreign language vocabulary efficiently. Built while learning Android Studio fundamentals.",
         tags: ["Android Studio", "Mobile Dev", "Java/Kotlin"],
-        link: "#" 
+        link: "https://github.com/bilgekaplan394-dotcom" // App henüz mağazada değilse GitHub linki kalabilir
       },
       {
         title: "Vercel Micro-Tools Collection",
         description: "A suite of small, focused web utilities and tools developed to solve specific problems. Deployed and hosted on Vercel for high performance and accessibility.",
         tags: ["React", "Next.js", "Vercel", "Tools"],
-        link: "#" 
+        link: "https://github.com/bilgekaplan394-dotcom" // Buraya araçların olduğu repo linki gelebilir
       },
       {
         title: "Memorial Website",
         description: "A dedicated digital memorial space designed with sensitivity and elegance. Features biography sections, photo galleries, and tribute messages.",
         tags: ["Web Design", "UI/UX", "Frontend"],
-        link: "#" 
+        link: "http://tributeternal.rf.gd" // EKLENDİ
       }
     ],
     education: [
@@ -157,7 +157,7 @@ const App = () => {
               </a>
 
               <div className="flex gap-4">
-                {/* LinkedIn Link Updated */}
+                {/* LinkedIn Link */}
                 <a 
                   href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
                   target="_blank" 
@@ -166,7 +166,7 @@ const App = () => {
                 >
                   <Linkedin size={24} />
                 </a>
-                {/* GitHub Link Updated */}
+                {/* GitHub Link */}
                 <a 
                   href="https://github.com/bilgekaplan394-dotcom" 
                   target="_blank" 
@@ -177,9 +177,9 @@ const App = () => {
                 </a>
               </div>
             </div>
-            
-            {/* Mobile/Extra Social Links (Also Updated) */}
-            <div className="mt-8 flex gap-4 justify-center md:justify-start md:hidden">
+
+            {/* Mobile Social Links */}
+             <div className="mt-8 flex gap-4 justify-center md:justify-start md:hidden">
               <a 
                 href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
                 target="_blank"
@@ -260,7 +260,9 @@ const App = () => {
                 {data.projects.map((project, idx) => (
                   <a 
                     href={project.link} 
-                    key={idx} 
+                    key={idx}
+                    target="_blank"
+                    rel="noopener noreferrer" 
                     className="group block border border-slate-200 rounded-xl p-5 hover:border-purple-400 hover:shadow-md transition-all bg-slate-50 hover:bg-white"
                   >
                     <div className="flex justify-between items-start mb-2">
