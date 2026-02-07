@@ -157,15 +157,47 @@ const App = () => {
               </a>
 
               <div className="flex gap-4">
-                {/* Social Links placeholders */}
-                <a href="#" className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1 text-slate-300 hover:text-white">
+                {/* LinkedIn Link Updated */}
+                <a 
+                  href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
+                >
                   <Linkedin size={24} />
                 </a>
-                <a href="#" className="p-3 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1 text-slate-300 hover:text-white">
+                {/* GitHub Link Updated */}
+                <a 
+                  href="https://github.com/bilgekaplan394-dotcom" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1 text-slate-300 hover:text-white"
+                >
                   <Github size={24} />
                 </a>
               </div>
             </div>
+            
+            {/* Mobile/Extra Social Links (Also Updated) */}
+            <div className="mt-8 flex gap-4 justify-center md:justify-start md:hidden">
+              <a 
+                href="https://www.linkedin.com/in/bilgehan-kaplan-a1b75a36b" 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="p-2 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a 
+                href="https://github.com/bilgekaplan394-dotcom" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-slate-800 rounded-full hover:bg-gray-700 transition-all hover:-translate-y-1"
+              >
+                <Github size={24} />
+              </a>
+            </div>
+
           </div>
         </div>
       </header>
